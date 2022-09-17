@@ -1,7 +1,11 @@
-import { getMovieById, getSeriesById, getImageUrl } from "./tmdb.ts";
+import { getMovieById, getSeriesById, getImageUrl, searchMovie } from "./tmdb.ts";
 const id = 123;
 
-const jsonData = await getSeriesById(id);
-console.log(getImageUrl(jsonData["backdrop_path"], "w500"));
+let jsonData = await getSeriesById(id);
 
-//console.log(jsonData);
+jsonData = await searchMovie("Avengers");
+//console.log(jsonData.results);
+
+for (let result of jsonData.results){
+    console.log(`${result.title}\n${result.id}\n`);
+}
