@@ -25,3 +25,10 @@ export async function searchMovie(query: string){
     const queryResults = await jsonResponse.json();
     return queryResults;
 }
+
+export async function searchSeries(query: string){
+    const uri = `${env["TMDB_ENDPOINT"]}/search/tv?api_key=${env["TMDB_API"]}&query=${query}`;
+    const jsonResponse = await fetch(uri);
+    const queryResults = await jsonResponse.json();
+    return queryResults;
+}
