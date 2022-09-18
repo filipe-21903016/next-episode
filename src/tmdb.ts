@@ -1,7 +1,6 @@
-import {config} from "./dev_deps.ts";
-const env = await config({
-    path: "../.env",
-});
+import {env} from "./dev_deps.ts";
+
+console.log(env["TMDB_ENDPOINT"]);
 
 export async function getMovieById(movieId: number){
     const uri = `${env["TMDB_ENDPOINT"]}/movie/${movieId}?api_key=${env["TMDB_API"]}`;
