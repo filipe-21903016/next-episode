@@ -1,1 +1,2 @@
 export { config } from "https://deno.land/std@0.156.0/dotenv/mod.ts?s=config";
+export { Database, PostgresConnector, Model, DataTypes, Relationships} from "https://raw.githubusercontent.com/joeldesante/denodb/master/mod.ts";
