@@ -1,5 +1,5 @@
-import { Client } from "../dev_deps.ts";
-import { Show, ShowType } from "../entities/Show.ts";
+import { Client } from "./dev_deps.ts";
+import { Show, ShowType } from "./entities/Show.ts";
 import { PostgresRepository } from "./interfaces/PostgresRepository.ts"
 
 export default class ShowRepository implements PostgresRepository<Show>{
@@ -48,13 +48,13 @@ export default class ShowRepository implements PostgresRepository<Show>{
     }
 
     //TODO IMPLEMENT
-    async find(): Promise<Show[]> {
-        try{
+    find(): Promise<Show[]> {
+        /* try{
             const res = await this._client.queryArray(
                 `SELECT * FROM SHOWS;`
             );
             const shows = res.rows.forEach(show => {
-                //workaround because 1 constructor allowed
+                workaround because 1 constructor allowed
                 console.log(new Show(
                     show[1] as string,
                     show[2] as number,
@@ -65,7 +65,8 @@ export default class ShowRepository implements PostgresRepository<Show>{
         }catch(e){
             console.log(e);
             return [] as Show[];
-        }
+        } */
+        throw new Error("Method not implemented.");
     }
 
     findOne(id: string): Promise<Show> {

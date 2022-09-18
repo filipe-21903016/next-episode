@@ -1,5 +1,4 @@
-import { Client } from "../../dev_deps.ts";
-import { BaseRepository } from "./BaseRepository.ts";
+import { Client } from "../dev_deps.ts";
 import { IRead } from "./IRead.ts";
 import { IWrite } from "./IWrite.ts";
 

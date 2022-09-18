@@ -1,7 +1,6 @@
-import { name } from "https://deno.land/std@0.141.0/_wasm_crypto/crypto.wasm.mjs";
 import { config, Client} from "./dev_deps.ts";
 import { Show, ShowType } from "./entities/Show.ts";
-import ShowRepository from "./repositories/ShowRepository.ts";
+import ShowRepository from "./ShowRepository.ts";
 import { getImageUrl, searchSeries } from "./tmdb.ts";
 const env = await config({
   path: "../.env",
@@ -19,7 +18,6 @@ let connectionParams = {
     user: env.POSTGRES_USER
 };
 const client = new Client(connectionParams);
-
 
 const showRepo = ShowRepository.getInstance(client);
 const jsonData = await searchSeries(Deno.args[0]);
