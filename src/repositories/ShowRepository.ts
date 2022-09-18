@@ -39,7 +39,7 @@ export default class ShowRepository extends PostgresRepository<Show>{
     async delete(item: Show): Promise<boolean> {
         try{
             await this._client.queryArray(
-                `DELETE FROM SHOWS WHERE tmdb_id = '${item.tmdb_id}';`
+                `DELETE FROM SHOWS WHERE id = '${item.id}';`
             );
             return true;
         }catch(e){
