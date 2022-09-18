@@ -2,12 +2,11 @@ import { Client } from "../dev_deps.ts";
 import { Show, ShowType } from "../entities/Show.ts";
 import { PostgresRepository } from "./interfaces/PostgresRepository.ts"
 
-export default class ShowRepository extends PostgresRepository<Show>{
+export default class ShowRepository implements PostgresRepository<Show>{
     _client: Client;
     private static instance: ShowRepository;
 
     private constructor(client:Client){
-        super();
         this._client = client;        
     }
 
@@ -32,7 +31,7 @@ export default class ShowRepository extends PostgresRepository<Show>{
         
     }
 
-    update(id: string,item: Show): Promise<boolean> {
+    update(id: string, item: Show): Promise<boolean> {
         throw new Error("Method not implemented.");
     }
 
