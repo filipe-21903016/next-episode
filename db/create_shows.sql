@@ -9,12 +9,3 @@ CREATE TABLE IF NOT EXISTS SHOWS(
     updated_at bigint NOT NULL,
     PRIMARY KEY (id)
 );
-
-INSERT INTO SHOWS (id, name,show_type, created_at, updated_at) 
-VALUES (
-    123,
-    'shehulk',
-    'tvshow',
-    1663528123,
-    1663528123
-);
